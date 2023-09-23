@@ -1,0 +1,126 @@
+.btn {
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: #140158;
+  box-shadow: 5px 10px 20px rgba(244, 248, 248, 0.3);
+  border-radius: 5px;
+  color: #b9fefe;
+  margin-top: 35px;
+}
+.btn:hover {
+  background-color: transparent;
+  transition: all ease 0.5s;
+  color: #140158;
+  border: 2px solid #140158;
+}
+
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btnModal {
+  /* padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px; */
+
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  background-color: #140158;
+  box-shadow: 5px 10px 20px rgba(244, 248, 248, 0.3);
+  border-radius: 5px;
+  color: #b9fefe;
+  margin-top: 35px;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+.modalContent {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  /* max-width: 70%;
+  min-width: 300px; */
+  width: 65%;
+  text-align: justify;
+}
+
+.closeModal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  border: 0px;
+}
+
+/* .shadows {
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: -15px 5px 20px #ced0d3;
+  color: white;
+  letter-spacing: -0.05em;
+  font-family: "Anton", Arial, sans-serif;
+  user-select: none;
+  text-transform: uppercase;
+  font-size: 150px;
+  transition: all 0.25s ease-out;
+}
+.shadows:hover {
+  text-shadow: -16px 6px 15px #ced0d3;
+} */
+
+.typewriter {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 0.15em solid orange; /* The typwriter cursor / */
+  white-space: nowrap; /* Keeps the content on a single line /*/
+  margin: 0px auto; /* Gives that scrolling effect as the typing happens /*/
+  letter-spacing: 0.15em; /* Adjust as needed */
+  animation: typing 5.5s steps(30, end) infinite,
+    blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 80%;
+  }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}

@@ -1,0 +1,48 @@
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { deleteTotaltimeCount } from "./totaltimecountSlice";
+import { Link } from "react-router-dom";
+import ConfirmModal from "../utility/ConfirmModal";
+
+const TotaltimeCountItem = (props) => {
+  const dispatch = useDispatch();
+  const [isModalOpen, setModalOpen] = useState(false);
+  function deleteHandler() {
+    setModalOpen(true);
+  }
+
+  function cancelHandler() {
+    setModalOpen(false);
+  }
+
+  function confirmHandler() {
+    dispatch(deleteTotaltimeCount(props.id)).unwrap();
+    setModalOpen(false);
+  }
+
+  return (
+    <tr>
+      <td>{props.id}</td>
+      <td>{props.subject?.name}</td>
+      <td>{props.timeCount}</td>
+      <td>{props.fromDate}</td>
+      <td>{props.toDate}</td>
+
+      <td>
+        <Link to={`/admin/totaltimecount/update/${props.id}`}>
+          <i class="far fa-edit fa-lg" style={{ color: "#040738" }}></i>
+        </Link>
+        {/* &nbsp;&nbsp;
+        <Link type="button" onClick={deleteHandler}>
+          <i class="ms-3 fas fa-trash fa-lg" style={{ color: "#040738" }}></i>
+        </Link> */}
+      </td>
+
+      {isModalOpen && (
+        <ConfirmModal onCancel={cancelHandler} onConfirm={confirmHandler} />
+      )}
+    </tr>
+  );
+};
+
+export default TotaltimeCountItem;
